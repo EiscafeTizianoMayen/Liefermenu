@@ -135,24 +135,51 @@
       gap:8px;
     }
 
-    $1
-
-    .delivery-area-link{
+    .contact-link{
       display:flex;
       align-items:center;
       justify-content:center;
       gap:8px;
-      min-height:46px;
-      padding:11px 14px;
+      min-height:44px;
+      padding:10px 12px;
       border-radius:999px;
-      background:#fff7e8;
-      border:1px solid #f1ddbd;
-      color:#9a6210;
+      background:#fff;
+      border:1px solid #ddece3;
+      color:var(--green);
       text-decoration:none;
-      font-size:16px;
+      font-size:17px;
       font-weight:900;
       letter-spacing:.01em;
+    }
+
+    .top-link-card{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow);
+      padding:14px;
+      margin-bottom:14px;
+    }
+
+    .liefergebiete-btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
       text-align:center;
+      text-decoration:none;
+      padding:12px 14px;
+      border-radius:14px;
+      font-weight:800;
+      font-size:15px;
+      background:#fff4e5;
+      color:#a86a0a;
+      border:1px solid #f3dfbd;
+      transition:.15s ease;
+    }
+
+    .liefergebiete-btn:hover{
+      filter:brightness(.98);
+      transform:translateY(-1px);
     }
 
     .nav-card{
@@ -327,36 +354,6 @@
       margin:6px 0 22px;
     }
 
-    .top-link-card{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:var(--radius-xl);
-      box-shadow:var(--shadow);
-      padding:14px;
-      margin-bottom:14px;
-    }
-
-    .liefergebiete-btn{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      text-decoration:none;
-      padding:12px 14px;
-      border-radius:14px;
-      font-weight:800;
-      font-size:15px;
-      background:#fff4e5;
-      color:#a86a0a;
-      border:1px solid #f3dfbd;
-      transition:.15s ease;
-    }
-
-    .liefergebiete-btn:hover{
-      filter:brightness(.98);
-      transform:translateY(-1px);
-    }
-
     .footer{
       margin-top:14px;
       background:var(--surface);
@@ -402,7 +399,7 @@
       .hero,
       .footer,
       .nav-card,
-      .delivery-card{
+      .top-link-card{
         box-shadow:0 8px 24px rgba(0,0,0,.09);
       }
 
@@ -431,7 +428,10 @@
 
       <div class="contact-box">
         <div class="contact-title">Bestellungen unter</div>
-        $1
+        <div class="contact-links">
+          <a class="contact-link" href="https://wa.me/4917621651116">💬 WhatsApp: 017621651116</a>
+          <a class="contact-link" href="tel:+4926513327">☎️ 02651-3327</a>
+        </div>
       </div>
     </header>
 
