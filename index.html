@@ -135,21 +135,24 @@
       gap:8px;
     }
 
-    .contact-link{
+    $1
+
+    .delivery-area-link{
       display:flex;
       align-items:center;
       justify-content:center;
       gap:8px;
-      min-height:44px;
-      padding:10px 12px;
+      min-height:46px;
+      padding:11px 14px;
       border-radius:999px;
-      background:#fff;
-      border:1px solid #ddece3;
-      color:var(--green);
+      background:#fff7e8;
+      border:1px solid #f1ddbd;
+      color:#9a6210;
       text-decoration:none;
-      font-size:17px;
+      font-size:16px;
       font-weight:900;
       letter-spacing:.01em;
+      text-align:center;
     }
 
     .nav-card{
@@ -324,54 +327,35 @@
       margin:6px 0 22px;
     }
 
-    .delivery-card{
+    .top-link-card{
       background:var(--surface);
       border:1px solid var(--line);
       border-radius:var(--radius-xl);
       box-shadow:var(--shadow);
-      padding:16px;
-      margin-top:14px;
+      padding:14px;
+      margin-bottom:14px;
     }
 
-    .delivery-title{
-      margin:0 0 10px;
-      color:var(--brown);
-      font-size:20px;
-      font-weight:950;
-      letter-spacing:-.02em;
-    }
-
-    .legend{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:8px;
-      font-size:13px;
-      color:var(--muted);
-      font-weight:800;
-    }
-
-    .legend-item{
+    .liefergebiete-btn{
       display:flex;
       align-items:center;
-      gap:7px;
-      background:var(--surface-soft);
-      border:1px solid #ececec;
+      justify-content:center;
+      text-align:center;
+      text-decoration:none;
+      padding:12px 14px;
       border-radius:14px;
-      padding:10px;
+      font-weight:800;
+      font-size:15px;
+      background:#fff4e5;
+      color:#a86a0a;
+      border:1px solid #f3dfbd;
+      transition:.15s ease;
     }
 
-    .dot{
-      width:12px;
-      height:12px;
-      border-radius:50%;
-      display:inline-block;
-      flex:0 0 auto;
+    .liefergebiete-btn:hover{
+      filter:brightness(.98);
+      transform:translateY(-1px);
     }
-
-    .dot.blue{ background:var(--blue); }
-    .dot.orange{ background:var(--orange); }
-    .dot.red{ background:var(--red); }
-    .dot.gray{ background:var(--gray); }
 
     .footer{
       margin-top:14px;
@@ -447,28 +431,21 @@
 
       <div class="contact-box">
         <div class="contact-title">Bestellungen unter</div>
-        <div class="contact-links">
-          <a class="contact-link" href="https://wa.me/4917621651116">💬 017621651116</a>
-          <a class="contact-link" href="tel:+4926513327">☎️ 02651-3327</a>
-        </div>
+        $1
       </div>
     </header>
+
+    <section class="top-link-card">
+      <a class="liefergebiete-btn" href="https://eiscafetizianomayen.github.io/Liefergebiete/" target="_blank" rel="noopener noreferrer">
+        Zu den Liefergebieten
+      </a>
+    </section>
 
     <nav class="nav-card" aria-label="Menü Navigation">
       <div class="nav-scroll" id="nav"></div>
     </nav>
 
     <main class="cards" id="menu"></main>
-
-    <section class="delivery-card">
-      <h2 class="delivery-title">Mindestbestellwert Liefergebiete</h2>
-      <div class="legend">
-        <span class="legend-item"><span class="dot blue"></span>15 € Zone</span>
-        <span class="legend-item"><span class="dot orange"></span>20 € Zone</span>
-        <span class="legend-item"><span class="dot red"></span>25 € Zone</span>
-        <span class="legend-item"><span class="dot gray"></span>35 € außerhalb</span>
-      </div>
-    </section>
 
     <footer class="footer">
       <strong>Eiscafe Tiziano</strong><br>
