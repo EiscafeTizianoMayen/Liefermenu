@@ -26,7 +26,6 @@
       --blue:#3b82f6;
       --orange:#e7a23b;
       --red:#e4554d;
-      --gray:#d6d6d6;
 
       --radius-xl:22px;
       --radius-lg:18px;
@@ -339,6 +338,22 @@
       margin:2px 0;
     }
 
+    .vegan-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      margin-left:8px;
+      padding:3px 8px;
+      border-radius:999px;
+      background:#eaf7ea;
+      border:1px solid #cfe6cf;
+      color:#2b7a2b;
+      font-size:12px;
+      font-weight:900;
+      line-height:1;
+      white-space:nowrap;
+    }
+
     .notice-card{
       background:linear-gradient(180deg,#f7fbf8 0%,#ffffff 100%);
       border:1px solid var(--mint-border);
@@ -458,14 +473,6 @@
   </div>
 
   <script>
-    /*
-      EDYCJA MENU:
-      - Żeby dodać produkt: skopiuj jeden blok { name, price, ingredients } i wklej w odpowiedniej sekcji.
-      - Żeby usunąć produkt: usuń cały blok od { do }, razem z przecinkiem.
-      - Żeby zmienić cenę: zmień tylko price: "€ 8.00".
-      - Żeby dodać listę smaków: użyj flavors: ["Vanille", "Erdbeer"] zamiast ingredients.
-    */
-
     const menuSections = [
       {
         id: "spaghetti-eis",
@@ -488,6 +495,11 @@
             name: "Spag. mit Erdbeeren",
             price: "€ 8.00",
             ingredients: "Sahne, Vanilleeis, selbstgemachte Erdbeersoße, frische Erdbeeren"
+          },
+          {
+            name: "Spag. Frutti di Mare",
+            price: "€ 8.00",
+            ingredients: "Sahne, Joghurteis, Heidelbeeren, Himbeeren, Waldfruchtsoße"
           },
           {
             name: "Spag. Carbonara",
@@ -613,6 +625,11 @@
             ingredients: "Sahne, Milcheis, hausgemachter Krokant-splitter, hausgemachter Nusslikör"
           },
           {
+            name: "Tiramisù Becher",
+            price: "€ 9.00",
+            ingredients: "Sahne, Vanille- u. Mokkaeis, in Rum eingelegte Bisquits, Rum- und Mokkasoße"
+          },
+          {
             name: "Kokosnuss Becher",
             price: "€ 8.50",
             ingredients: "Sahne, Milcheis, Kokosraspeln, Schokostreusel, Kokos- und selbstgemachte Schokosoße"
@@ -651,7 +668,7 @@
             price: "€ 1.50",
             flavors: [
               "Vanille",
-              "Vanille laktosefrei",
+              { name: "Vanille Lactosefrei", vegan: true },
               "Schokolade",
               "Stracciatella",
               "Malaga",
@@ -670,8 +687,8 @@
               "Bacio Bianco",
               "Mozart",
               "Bacio",
-              "Pistazien"
-              "Bitterschokolade"
+              "Pistazien",
+              { name: "Bitterschokolade", vegan: true }
             ]
           },
           {
@@ -682,16 +699,16 @@
             name: "Classico Sorbet",
             price: "€ 1.50",
             flavors: [
-              "Erdbeer",
-              "Himbeer",
-              "Zitrone",
-              "Heidelbeer",
-              "Aprikose",
-              "Mango (nur in Saison)",
-              "Rhabarber (nur in Saison)",
-              "Melone (nur in Saison)",
-              "Maracuja (nur in Saison)",
-              "Ananas (nur in Saison)"
+              { name: "Erdbeer", vegan: true },
+              { name: "Himbeer", vegan: true },
+              { name: "Zitrone", vegan: true },
+              { name: "Heidelbeer", vegan: true },
+              { name: "Aprikose", vegan: true },
+              { name: "Mango (nur in Saison)", vegan: true },
+              { name: "Rhabarber (nur in Saison)", vegan: true },
+              { name: "Melone (nur in Saison)", vegan: true },
+              { name: "Maracuja (nur in Saison)", vegan: true },
+              { name: "Ananas (nur in Saison)", vegan: true }
             ]
           }
         ]
@@ -777,13 +794,25 @@
         .replaceAll("'", "&#039;");
     }
 
+    function renderFlavor(flavor) {
+      if (typeof flavor === "string") {
+        return `<li>${escapeHtml(flavor)}</li>`;
+      }
+
+      const badge = flavor.vegan
+        ? `<span class="vegan-badge">🌱 vegan</span>`
+        : "";
+
+      return `<li>${escapeHtml(flavor.name)} ${badge}</li>`;
+    }
+
     function renderMenuItem(item) {
       const ingredients = item.ingredients
         ? `<p class="ingredients">(${escapeHtml(item.ingredients)})</p>`
         : "";
 
       const flavors = item.flavors && item.flavors.length
-        ? `<ul class="flavors">${item.flavors.map(flavor => `<li>${escapeHtml(flavor)}</li>`).join("")}</ul>`
+        ? `<ul class="flavors">${item.flavors.map(renderFlavor).join("")}</ul>`
         : "";
 
       return `
