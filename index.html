@@ -320,6 +320,10 @@
       gap:10px;
     }
 
+    .item-line.no-price{
+      display:block;
+    }
+
     .item-name{
       font-size:17px;
       line-height:1.15;
@@ -371,6 +375,54 @@
       background:#eaf7ea;
       border:1px solid #cfe6cf;
       color:#2b7a2b;
+      font-size:12px;
+      font-weight:900;
+      line-height:1;
+      white-space:nowrap;
+    }
+
+    .saison-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      margin-left:8px;
+      padding:3px 8px;
+      border-radius:999px;
+      background:#fff4e5;
+      border:1px solid #f3dfbd;
+      color:#a86a0a;
+      font-size:12px;
+      font-weight:900;
+      line-height:1;
+      white-space:nowrap;
+    }
+
+    .wechselnd-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      margin-left:8px;
+      padding:3px 8px;
+      border-radius:999px;
+      background:#f3e8ff;
+      border:1px solid #e3c8f7;
+      color:#7e22ce;
+      font-size:12px;
+      font-weight:900;
+      line-height:1;
+      white-space:nowrap;
+    }
+
+    .winter-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      margin-left:8px;
+      padding:3px 8px;
+      border-radius:999px;
+      background:#edf4ff;
+      border:1px solid #d9e7ff;
+      color:#1f5fd1;
       font-size:12px;
       font-weight:900;
       line-height:1;
@@ -677,54 +729,76 @@
         icon: "🍦",
         color: "blue",
         title: "Unsere Eisbällchen",
-        description: "Eissorten zum Kombinieren.",
+        description: "Eisbällchen nach Wahl und täglich wechselnde Sorten.",
         items: [
           {
-            name: "Classico Milcheis",
-            price: "€ 1.50",
-            flavors: [
-              "Vanille",
-              { name: "Vanille Lactosefrei", vegan: true },
-              "Schokolade",
-              "Stracciatella",
-              "Malaga",
-              "Joghurt",
-              "Sahne Kirsch",
-              "Haselnuss",
-              "Salzkaramell",
-              "Banane",
-              "Joghurt mit Mandarinen o. Maracuja"
-            ]
+            name: "1 Eisbällchen nach Wahl",
+            price: "€ 2.50"
           },
           {
-            name: "5-Sterne Eissorten",
-            price: "€ 2.00",
-            flavors: [
-              "Bacio Bianco",
-              "Mozart",
-              "Bacio",
-              "Pistazien",
-              { name: "Bitterschokolade", vegan: true }
-            ]
+            name: "2 Eisbällchen nach Wahl",
+            price: "€ 4.00"
+          },
+          {
+            name: "3 Eisbällchen nach Wahl",
+            price: "€ 5.50"
+          },
+          {
+            name: "4 Eisbällchen nach Wahl",
+            price: "€ 7.00"
+          },
+          {
+            name: "5 Eisbällchen nach Wahl",
+            price: "€ 8.50"
+          },
+          {
+            name: "6 Eisbällchen nach Wahl",
+            price: "€ 10.00"
           },
           {
             name: "Portion Sahne",
             price: "€ 1.50"
           },
           {
-            name: "Classico Sorbet",
-            price: "€ 1.50",
+            name: "Unsere Eissorten",
+            ingredients: "Unsere Eissorten wechseln täglich. Je nach Saison und Verfügbarkeit kann die Auswahl variieren.",
             flavors: [
-              { name: "Erdbeer", vegan: true },
-              { name: "Himbeer", vegan: true },
-              { name: "Zitrone", vegan: true },
-              { name: "Heidelbeer", vegan: true },
-              { name: "Aprikose", vegan: true },
-              { name: "Mango (nur in Saison)", vegan: true },
-              { name: "Rhabarber (nur in Saison)", vegan: true },
-              { name: "Melone (nur in Saison)", vegan: true },
-              { name: "Maracuja (nur in Saison)", vegan: true },
-              { name: "Ananas (nur in Saison)", vegan: true }
+              "Vanille",
+              "Schokolade",
+              "Malaga",
+              "Walnuss",
+              "Stracciatella",
+              "Bacio",
+              "Haselnuss",
+              "Joghurt",
+              "Pistazien",
+              "Espresso",
+              "Sahne Kirsch",
+              { name: "Joghurt Mandarine", saison: true },
+              { name: "Nutella", wechselnd: true },
+              "Snickers",
+              { name: "Giotto", wechselnd: true },
+              { name: "Bitterschokolade", wechselnd: true },
+              { name: "Zitrone", vegan: true, saison: true },
+              { name: "Erdbeere", vegan: true },
+              "Banane",
+              { name: "Ananas", vegan: true, saison: true, wechselnd: true },
+              { name: "Heidelbeer", vegan: true, saison: true },
+              { name: "Himbeer", vegan: true, saison: true },
+              "After Eight",
+              { name: "Feigenkaktus", vegan: true, saison: true, wechselnd: true },
+              "Salzkaramell",
+              { name: "Bounty", wechselnd: true },
+              { name: "Waldmeister", saison: true },
+              { name: "Rhabarber", vegan: true, saison: true },
+              { name: "Mango", vegan: true, saison: true },
+              { name: "Mozart", wechselnd: true },
+              { name: "Maracuja", vegan: true, saison: true, wechselnd: true },
+              { name: "Bacio Bianco", wechselnd: true },
+              { name: "Oreo", wechselnd: true },
+              "Blau",
+              { name: "Cheesecake", wechselnd: true },
+              { name: "Zimt", winter: true }
             ]
           }
         ]
@@ -737,7 +811,7 @@
         description: "Eiskalte Getränke und Milch Mix.",
         items: [
           {
-            name: "Eiskafee",
+            name: "Eiskaffee",
             price: "€ 5.50"
           },
           {
@@ -815,14 +889,28 @@
         return `<li>${escapeHtml(flavor)}</li>`;
       }
 
-      const badge = flavor.vegan
+      const veganBadge = flavor.vegan
         ? `<span class="vegan-badge">🌱 vegan</span>`
         : "";
 
-      return `<li>${escapeHtml(flavor.name)} ${badge}</li>`;
+      const saisonBadge = flavor.saison
+        ? `<span class="saison-badge">☀️ saisonabhängig</span>`
+        : "";
+
+      const wechselndBadge = flavor.wechselnd
+        ? `<span class="wechselnd-badge">⏳ nicht täglich</span>`
+        : "";
+
+      const winterBadge = flavor.winter
+        ? `<span class="winter-badge">❄️ Winter</span>`
+        : "";
+
+      return `<li>${escapeHtml(flavor.name)} ${veganBadge} ${saisonBadge} ${wechselndBadge} ${winterBadge}</li>`;
     }
 
     function renderMenuItem(item) {
+      const hasPrice = item.price && item.price.trim() !== "";
+
       const ingredients = item.ingredients
         ? `<p class="ingredients">(${escapeHtml(item.ingredients)})</p>`
         : "";
@@ -831,13 +919,23 @@
         ? `<ul class="flavors">${item.flavors.map(renderFlavor).join("")}</ul>`
         : "";
 
-      return `
-        <article class="menu-item">
+      const itemLine = hasPrice
+        ? `
           <div class="item-line">
             <div class="item-name">${escapeHtml(item.name)}</div>
             <div class="leader"></div>
             <div class="price">${escapeHtml(item.price)}</div>
           </div>
+        `
+        : `
+          <div class="item-line no-price">
+            <div class="item-name">${escapeHtml(item.name)}</div>
+          </div>
+        `;
+
+      return `
+        <article class="menu-item">
+          ${itemLine}
           ${ingredients}
           ${flavors}
         </article>
